@@ -1,15 +1,21 @@
 # Reflection -- Hello, Azure AI
 
-Answer these questions after completing the activity (2-3 sentences each). Connect your answers to specific things you observed while coding and experimenting.
+When I was staring I was thinking of how to categorize the request. I was thinking how to find the problem, where it is, and what category.
+
+I at first had too many categories but fixed it after. I had to make sure the system message returned a JSON, because it was giving me errors when that wasn't in the prompt.
+
+If the complaint is flagged, the harmful content should be removed but the message should still come though if it is a safety concern.
+
+If we removed the content safety service, the model would still function but the content coming through would be unmoderated and could be offensive.
 
 ## 1. Service Surprises
 
-Which of the three Azure AI services (OpenAI, Content Safety, Language) surprised you the most? Connect this to something specific you observed during your experiments -- a response you didn't expect, a behavior that seemed too easy or too hard, or a result that made you rethink how the service works.
+I had some slight issues when trying to import packages but I just had the syntax wrong. I also had to make sure the method names were correct when accessing variables. I had to make sure the system message was clear when asking for a response and make sure the message was formatted in the way the model wanted.
 
 ## 2. Lazy Initialization
 
-How would you explain the lazy initialization pattern to a colleague? Why is it used instead of creating clients at the top of the file?
+How I would explain would be that instead of putting keys into a file, you connect your azure account, and use those connections as variables to use with the api. It is more secure than having your keys in plaintext.
 
 ## 3. Content Safety in the Real World
 
-A resident files this complaint: *"A man was assaulted at this intersection because the street light has been out for months."* This text describes real violence but is a legitimate safety concern. Should the system block it, flag it for human review, or pass it through? What factors would you weigh in making that decision?
+Flag for human review and add the model's concerns. Perhaps the concern should pass be categorized first, then content moderation. Key phrase extraction should help with categorizing with human oversight.
